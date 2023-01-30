@@ -1,0 +1,8 @@
+<ul style="list-style: none;">
+  <%  @recipes.each_with_index do |recipe, index| %>
+  <li>
+      <%= "#{index + 1}. [#{recipe.marked ? "X" : " "}] #{recipe.name}: #{recipe.description} (#{recipe.rating}/5)" %>
+  </li>  
+  <%  end %>
+</ul>
+<button onclick="window.location.href='/'">Back to menu</button>

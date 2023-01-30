@@ -1,0 +1,18 @@
+<body>
+  <form action="/import" method="post">
+    Choose a keyword to search: <input type="text" name="keyword_search"><br>
+    <input type="submit" value="Search">
+  </form>
+  <% unless params[:keyword_search].nil?
+    @recipe_array.each_with_index do |recipe, index| %>
+      <li>
+      <%= "#{index + 1}. #{recipe[0]}" %>
+      </li>  
+  <% end %>
+  <form action="/import/:keyword_search" method="post">
+    Choose recipe to add (index): <input type="text" name="index"><br>
+    <input type="submit" value="Add">
+  </form>    
+  <% end %>
+
+</body>

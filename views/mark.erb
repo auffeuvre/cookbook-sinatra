@@ -1,0 +1,14 @@
+<ul style="list-style: none;">
+  <%  @recipes.each_with_index do |recipe, index| %>
+  <li>
+      <%= "#{index + 1}. [#{recipe.marked ? "X" : " "}] #{recipe.name}: #{recipe.description} (#{recipe.rating}/5)" %>
+  </li>  
+  <%  end %>
+</ul>
+
+<body>
+  <form action="/mark" method="post">
+    Choose the index to mark: <input type="text" name="index"><br>
+    <input type="submit" value="Mark">
+  </form>
+</body>
